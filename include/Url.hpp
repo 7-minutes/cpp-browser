@@ -2,6 +2,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 namespace URL {
 
@@ -15,6 +16,7 @@ private:
 public:
     Url(std::string &url);
     void print();
+    const std::vector<unsigned char>& request();
 };
 
 } // namespace URL

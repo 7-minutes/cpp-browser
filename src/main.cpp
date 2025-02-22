@@ -1,16 +1,17 @@
 
 #include "Url.hpp"
-#include "TCPSocket.hpp"
+#include <cstdlib>
+#include <string>
+#include <iostream>
 
 int main() {
 
-    std::string link = "http://example.org/index/yomama.html";
+    std::string link = "http://example.org/";
 
-    URL::Url *url = new URL::Url(link);
+    URL::Url url(link);
+    url.request();
 
-    url->print();
+    std::cout << url.request().data();
 
-    auto &socket = Networking::TCPSocket::getInstance();
-
-    return 0;
+    return EXIT_SUCCESS;
 }
